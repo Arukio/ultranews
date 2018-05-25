@@ -2,9 +2,9 @@ import React from "react";
 import { TouchableOpacity, StyleSheet } from "react-native";
 import { Body, Text, Thumbnail, View } from "native-base";
 
-const DataItem = ({ data }) => (
+const DataItem = ({ data, openUrl }) => (
   <TouchableOpacity
-    onPress={this._handlePress}
+    onPress={() => openUrl(data)}
     style={{ flexDirection: "row" }}
     activeOpacity={0.5}
   >

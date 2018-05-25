@@ -1,15 +1,24 @@
-import { FETCHING_NEWS, FETCH_SUCCESS } from "../actions/news";
+import { OPEN_URL, CLOSE_URL } from "../actions/news";
 
 const initialState = {
-  news: {},
-  isFetching: false
+  showModal: false,
+  data: {}
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case FETCHING_NEWS:
-      return { ...state, isFetching: true };
-    case FETCH_SUCCESS:
+    case OPEN_URL:
+      return {
+        ...state,
+        showModal: true,
+        data: action.payload.data
+      };
+    case CLOSE_URL:
+      return {
+        ...state,
+        showModal: false,
+        data: {}
+      };
     default:
       return state;
   }

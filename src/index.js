@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "react-navigation";
 import { Font, AppLoading } from "expo";
+import { Provider } from "react-redux";
+import store from "./store";
 import Home from "./screens/Home";
 
 const Root = createStackNavigator(
@@ -36,7 +38,11 @@ export default class App extends React.Component {
     if (this.state.loading) {
       return <AppLoading />;
     } else {
-      return <Root />;
+      return (
+        <Provider store={store}>
+          <Root />
+        </Provider>
+      );
     }
   }
 }

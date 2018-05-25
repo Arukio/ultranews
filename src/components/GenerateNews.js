@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Content, List, ListItem, Text } from "native-base";
 import axios from "axios";
+import { connect } from "react-redux";
 import DataItem from "../components/DataItem";
+import { openUrl } from "../actions/news";
 
 class GenerateNews extends Component {
   constructor(props) {
@@ -16,6 +18,10 @@ class GenerateNews extends Component {
   componentDidMount() {
     this.fetchNews(this.props.category);
   }
+
+  handleOpenUrl = data => {
+    this.props.dispatch(openUrl(data));
+  };
 
   fetchNews = async category => {
     this.setState({ isFetching: true });
@@ -48,7 +54,7 @@ class GenerateNews extends Component {
             dataArray={this.state.news}
             renderRow={item => (
               <ListItem>
-                <DataItem data={item} />
+                <DataItem data={item} openUrl={this.handleOpenUrl} />
               </ListItem>
             )}
           />
@@ -58,4 +64,4 @@ class GenerateNews extends Component {
   }
 }
 
-export default GenerateNews;
+export default connect()(GenerateNews);
