@@ -46,7 +46,11 @@ class GenerateNews extends Component {
 
   render() {
     if (this.state.isFetching) {
-      return <Text>Loading..</Text>;
+      return (
+        <Text style={{ alignSelf: "center", justifyContent: "center" }}>
+          Loading...
+        </Text>
+      );
     } else {
       return (
         <Content>
