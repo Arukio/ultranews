@@ -18,7 +18,7 @@ import getTheme from "../../native-base-theme/components";
 import platform from "../../native-base-theme/variables/platform";
 import GenerateNews from "../components/GenerateNews";
 
-class BasicTab extends Component {
+class Home extends Component {
   render() {
     return (
       <StyleProvider style={getTheme(platform)}>
@@ -50,4 +50,4 @@ class BasicTab extends Component {
   }
 }
 
-export default BasicTab;
+export default Home;
