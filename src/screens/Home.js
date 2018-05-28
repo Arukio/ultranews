@@ -18,7 +18,7 @@ import { Font } from "expo";
 import { connect } from "react-redux";
 import { closeUrl } from "../actions/news";
 import getTheme from "../../native-base-theme/components";
-import platform from "../../native-base-theme/variables/platform";
+import platform from "../../native-base-theme/variables/material";
 import GenerateNews from "../components/GenerateNews";
 import Modal from "../components/Modal";
 
